@@ -5,7 +5,7 @@ include_once 'system/libs/SController.php';
 $url = isset($_GET['url'])? $_GET['url'] : NULL ;
 if(isset($url)!=NULL){
     $url = rtrim($url , "/");
-    $url = explode("/" , $url);
+    $url = explode("/" , filter_var($url ,FILTER_SANITIZE_URL));
 }
 else{
     unset($url);
@@ -28,7 +28,9 @@ if(isset($url[0])){
     }
 }
 else{
-#code
+include_once 'app/controllers/Index.php';
+$ctrl = new Index();
+$ctrl->home();
 }
 
 
