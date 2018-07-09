@@ -1,8 +1,8 @@
 <?php
-class Selim{
+class Selim extends SController {
     function __construct()
     {
-        echo "Hi this is selim form controller";
+        parent::__construct();
     }
 }
 ?>

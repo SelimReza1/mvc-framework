@@ -1,5 +1,6 @@
 <?php
-include_once 'system/libs/main.php';
+include_once 'system/libs/Main.php';
+include_once 'system/libs/SController.php';
 
 $url = $_GET['url'];
 $url = rtrim($url , "/");
