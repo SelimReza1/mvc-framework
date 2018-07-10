@@ -5,10 +5,17 @@ class CatModel{
     }
     public function catList(){
        return  array(
+           array(
             'catOne' => 'education' ,
             'catTwo' => 'sports' ,
             'catThree' => 'health'
-        );
+           ),
+        array(
+            'catOne' => 'education' ,
+            'catTwo' => 'sports' ,
+            'catThree' => 'health'
+           )
+           );
     }
 }
 ?>
