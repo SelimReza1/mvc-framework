@@ -5,8 +5,8 @@ class Selim extends SController {
         //parent::__construct();
     }
 
-    public function reza($param){
-        echo "selim reza $param";
+    public function reza(){
+        echo "selim reza ";
     }
 
 }

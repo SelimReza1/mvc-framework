@@ -20,8 +20,9 @@ if(isset($url[0])){
         $ctrl->$m($url[2]);
     }
     else{
-    if (isset($ur[1])){
-        $ctrl->$url[1]();
+    if (isset($url[1])){
+        $m = $url[1];
+        $ctrl->$m();
     }
     else{
         #code
