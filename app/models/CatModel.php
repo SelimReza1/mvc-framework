@@ -1,21 +1,14 @@
 <?php
-class CatModel{
+class CatModel extends SModel {
     function __construct()
     {
+        parent::__construct();
     }
     public function catList(){
-       return  array(
-           array(
-            'catOne' => 'education' ,
-            'catTwo' => 'sports' ,
-            'catThree' => 'health'
-           ),
-        array(
-            'catOne' => 'education' ,
-            'catTwo' => 'sports' ,
-            'catThree' => 'health'
-           )
-           );
-    }
+      $sql = "SELECT * FROM category";
+      $query = $this->db->query($sql);
+        $result = $query->fetchAll();
+        return $result;
+          }
 }
 ?>
