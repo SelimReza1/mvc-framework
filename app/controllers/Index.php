@@ -5,8 +5,8 @@ class Index extends SController{
         parent::__construct();
     }
 public function home(){
-       echo "home content from index controller";
-}
+$this->load->view("home");
+   }
 
 }
 ?>
