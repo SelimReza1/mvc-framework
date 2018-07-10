@@ -1,11 +1,15 @@
 <?php
 class Database extends PDO{
-    public function __construct()
+    public function __construct($dsn , $user , $pass)
     {
-        $dsn = 'mysql:dbname=db_mvc; host = localhost';
-        $user = 'root';
-        $pass = '';
+
         parent::__construct($dsn, $user, $pass);
     }
+    public function select($table){
+        $sql = "SELECT * FROM $table";
+        $stmt = $this->prepare($sql);
+        $stmt->execute();
+         return $stmt->fetchAll();
+            }
 }
 ?>
