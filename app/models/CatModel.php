@@ -5,14 +5,13 @@ class CatModel extends SModel {
         parent::__construct();
     }
     public function catList($table){
-        return $this->db->select($table);
+        $sql = "select * from $table";
+        return $this->db->select($sql);
           }
           public function catById($table , $id){
             $sql = "select * from $table WHERE id = :id";
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
-            return $stmt->fetchAll();
+            $data = array(":id" => $id);
+           return $this->db->select($sql , $data);
 
           }
 }

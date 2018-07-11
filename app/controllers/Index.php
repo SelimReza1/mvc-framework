@@ -21,7 +21,7 @@ class Index extends SController
     public function catById(){
         $data = array();
         $table = "category";
-        $id = 1 ;
+        $id = 3 ;
         $catModel = $this->load->model("CatModel");
         $data['cat'] = $catModel->catById($table, $id);
         $this->load->view("catById" , $data);
