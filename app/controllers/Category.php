@@ -41,7 +41,16 @@ class Category extends SController{
         }
         $this->load->view("addcategory", $mdata);
     }
-
+    public function updateCategory(){
+        $table = "category";
+        $data = array(
+            'name' => "oil",
+            'title' => "oil"
+        );
+        $cond = "id=1";
+        $catModel=  $this->load->model("catModel");
+        $catModel->updateCat($table , $data , $cond);
+    }
 
 }
 ?>

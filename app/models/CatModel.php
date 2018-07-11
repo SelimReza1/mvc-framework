@@ -17,5 +17,8 @@ class CatModel extends SModel {
           public function insertCat($table , $data){
             return $this->db->insert($table, $data);
           }
+          public function updateCat($table , $data , $cond){
+              return $this->db->update($table , $data , $cond);
+          }
 }
 ?>
