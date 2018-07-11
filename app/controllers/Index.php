@@ -13,9 +13,18 @@ class Index extends SController
     }
     public function category(){
         $data = array();
+        $table = "category";
         $catModel = $this->load->model("CatModel");
-       $data['cat'] = $catModel->catList();
+       $data['cat'] = $catModel->catList($table);
        $this->load->view("category" , $data);
+    }
+    public function catById(){
+        $data = array();
+        $table = "category";
+        $id = 1 ;
+        $catModel = $this->load->model("CatModel");
+        $data['cat'] = $catModel->catById($table, $id);
+        $this->load->view("catById" , $data);
     }
 
 
