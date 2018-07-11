@@ -27,6 +27,16 @@ class Index extends SController
         $this->load->view("catById" , $data);
     }
 
+    public function insertCategory(){
+        $table = "category";
+        $data = array(
+          'name' => 'technology',
+          'title' => 'technology'
+        );
+        $catModel = $this->load->model("CatModel");
+        $catModel->insertCat($table , $data);
+    }
+
 
 }
 
