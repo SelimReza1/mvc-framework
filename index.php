@@ -1,9 +1,8 @@
 <?php
-include_once 'system/libs/Main.php';
-include_once 'system/libs/SController.php';
-include_once 'system/libs/SModel.php';
-include_once 'system/libs/Database.php';
-include_once 'system/libs/Load.php';
+spl_autoload_register(function ($class){
+include_once 'system/libs/'.$class.'.php';
+
+});
 
 $url = isset($_GET['url'])? $_GET['url'] : NULL ;
 if(isset($url)!=NULL){

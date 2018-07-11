@@ -14,7 +14,7 @@ if(isset($msg)){
     echo "<span style='color: blue;font-weight: bold'>".$msg."</span>";
 }
 ?>
-<form action="http://localhost/mvc/Index/insertCategory" method="post">
+<form action="http://localhost/mvc/Category/insertCategory" method="post">
     <table>
         <tr>
             <td>Category Name:</td>
