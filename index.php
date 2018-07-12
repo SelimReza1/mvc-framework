@@ -1,8 +1,8 @@
 <?php
 spl_autoload_register(function ($class){
 include_once 'system/libs/'.$class.'.php';
-
 });
+include_once 'app/config/config.php';
 
 $url = isset($_GET['url'])? $_GET['url'] : NULL ;
 if(isset($url)!=NULL){

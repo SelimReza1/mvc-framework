@@ -9,7 +9,14 @@ class Index extends SController
 
     public function home()
     {
-        $this->load->view("home");
+        $data = array();
+        $table = "post";
+        $postModel = $this->load->model("PostModel");
+        $data['allpost'] = $postModel->getAllPost($table);
+        $this->load->view("home", $data);
+    }
+    public function postDetails(){
+
     }
 
 }

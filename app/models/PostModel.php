@@ -1,7 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Selim Reza
- * Date: 7/13/2018
- * Time: 1:49 AM
- */
+class PostModel extends SModel {
+    function __construct()
+    {
+        parent::__construct();
+    }
+    public function getAllPost($table){
+        $sql = "select * from $table order by id desc limit 3";
+        return $this->db->select($sql);
+    }
+
+}
+?>
