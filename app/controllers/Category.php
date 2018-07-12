@@ -41,7 +41,7 @@ class Category extends SController{
         }
         $this->load->view("addcategory", $mdata);
     }
-    public function updateCategory(){
+    public function updateCat(){
         $table = "category";
         $data = array(
             'name' => "oil",
@@ -52,5 +52,11 @@ class Category extends SController{
         $catModel->updateCat($table , $data , $cond);
     }
 
+    public function deleteCatById(){
+        $table = "category";
+        $cond= "id=1";
+        $catModel =$this->load->model("catModel");
+        $catModel->delCatById($table , $cond);
+    }
 }
 ?>
