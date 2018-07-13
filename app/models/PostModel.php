@@ -15,6 +15,13 @@ class PostModel extends SModel {
         WHERE $tablePost.id = $id";
         return $this->db->select($sql);
     }
+ public function getPostByCat($tablePost, $tableCat, $id){
+     $sql="SELECT $tablePost.*, $tableCat.name FROM $tablePost
+        INNER JOIN $tableCat
+        ON $tablePost.cat = $tableCat.id
+        WHERE $tableCat.id = $id";
+     return $this->db->select($sql);
+ }
 
 }
 ?>

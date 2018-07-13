@@ -30,7 +30,16 @@ class Index extends SController
         $this->load->view('sidebar');
         $this->load->view('footer');
     }
-    public function postByCat(){
+    public function postByCat($id){
+        $this->load->view('header');
+        $data = array();
+        $tablePost = "post";
+        $tableCat = "category";
+        $postModel = $this->load->model("PostModel");
+        $data['getcat'] = $postModel->getPostByCat($tablePost, $tableCat, $id);
+        $this->load->view("postbycat", $data);
+        $this->load->view('sidebar');
+        $this->load->view('footer');
 
     }
 
