@@ -16,7 +16,12 @@ class Index extends SController
         $postModel = $this->load->model("PostModel");
         $data['allpost'] = $postModel->getAllPost($table);
         $this->load->view("content", $data);
-        $this->load->view('sidebar');
+
+        $tableCat = "category";
+        $catModel = $this->load->model("CatModel");
+        $data['catlist'] = $catModel->catList($tableCat);
+        $data['latestpost'] = $postModel->getLatestPost($table);
+        $this->load->view('sidebar', $data);
         $this->load->view('footer');
     }
     public function postDetails($id){
@@ -27,7 +32,11 @@ class Index extends SController
         $postModel = $this->load->model("PostModel");
         $data['postbyid'] = $postModel->getPostById($tablePost, $tableCat, $id);
         $this->load->view("details", $data);
-        $this->load->view('sidebar');
+
+        $catModel = $this->load->model("CatModel");
+        $data['catlist'] = $catModel->catList($tableCat);
+        $data['latestpost'] = $postModel->getLatestPost($tablePost);
+        $this->load->view('sidebar', $data);
         $this->load->view('footer');
     }
     public function postByCat($id){
@@ -38,7 +47,11 @@ class Index extends SController
         $postModel = $this->load->model("PostModel");
         $data['getcat'] = $postModel->getPostByCat($tablePost, $tableCat, $id);
         $this->load->view("postbycat", $data);
-        $this->load->view('sidebar');
+
+        $catModel = $this->load->model("CatModel");
+        $data['catlist'] = $catModel->catList($tableCat);
+        $data['latestpost'] = $postModel->getLatestPost($tablePost);
+        $this->load->view('sidebar', $data);
         $this->load->view('footer');
 
     }

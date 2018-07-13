@@ -22,6 +22,10 @@ class PostModel extends SModel {
         WHERE $tableCat.id = $id";
      return $this->db->select($sql);
  }
+ public function getLatestPost($table){
+     $sql = "select * from $table order by id desc limit 5";
+     return $this->db->select($sql);
+ }
 
 }
 ?>

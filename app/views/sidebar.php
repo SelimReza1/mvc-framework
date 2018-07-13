@@ -2,21 +2,17 @@
     <div class="widget">
         <h2>Category</h2>
         <ul>
-            <li><a href="#">Category One</a></li>
-            <li><a href="#">Category One</a></li>
-            <li><a href="#">Category One</a></li>
-            <li><a href="#">Category One</a></li>
-            <li><a href="#">Category One</a></li>
-        </ul>
+            <?php foreach ($catlist as $Key => $value){ ?>
+            <li><a href="<?php echo BASE_URL;?>/Index/postByCat/<?php echo $value['id'];?>"><?php echo $value['name'] ?></a></li>
+            <?php } ?>
+                    </ul>
     </div>
     <div class="widget">
         <h2>Latest Post</h2>
         <ul>
-            <li><a href="#">Title of the Post Content</a></li>
-            <li><a href="#">Title of the Post Content</a></li>
-            <li><a href="#">Title of the Post Content</a></li>
-            <li><a href="#">Title of the Post Content</a></li>
-            <li><a href="#">Title of the Post Content</a></li>
+            <?php foreach ($latestpost as $Key => $value){ ?>
+            <li><a href="<?php echo BASE_URL;?>/Index/postDetails/<?php echo $value['id']; ?>"><?php echo $value['title'] ?></a></li>
+            <?php } ?>
 
         </ul>
     </div>
