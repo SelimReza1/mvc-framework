@@ -8,6 +8,13 @@ class PostModel extends SModel {
         $sql = "select * from $table order by id desc limit 3";
         return $this->db->select($sql);
     }
+    public function getPostById($tablePost, $tableCat, $id){
+        $sql="SELECT $tablePost.*, $tableCat.name FROM $tablePost
+        INNER JOIN $tableCat
+        ON $tablePost.cat = $tableCat.id
+        WHERE $tablePost.id = $id";
+        return $this->db->select($sql);
+    }
 
 }
 ?>
